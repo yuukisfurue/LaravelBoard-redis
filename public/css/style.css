@@ -54,3 +54,21 @@ button {
 .form-button {
     text-align: right;
 }
+
+table th {/*table内のthに対して*/
+    padding: 10px 35px;
+  }
+  
+  table td {/*table内のtdに対して*/
+    padding: 20px 20px;
+  }
+
+  table tr {/*table内のtdに対して*/
+    padding: 30px 30px;
+  }
+
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 8px;
+}

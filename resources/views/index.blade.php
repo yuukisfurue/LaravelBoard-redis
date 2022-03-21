@@ -5,8 +5,11 @@
 
     <h1>
         <span>Laravelmix-Tutorial</span>
-        <a href="{{ route('posts.create') }}">[Add]</a>
+        <a href="{{ route('posts.create') }}">[追加]</a>
     </h1>
+    <h2>
+        <span>Laravelmix-Tutorial</span>
+    </h2>
     @forelse ($posts as $post)
     <table border="3">
     <tr>

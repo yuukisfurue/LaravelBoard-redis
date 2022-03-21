@@ -29,6 +29,17 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|min:3',
+            'gender' => 'required',
+            'pref' => 'required',
+            'jyob' => 'required',
+            'employmentstatus' => 'required',
+        ], [
+            'name.required' => '氏名は必須です',
+            'name.min' => ':min 文字以上入力してください',
+        ]);
+
         $post = new Post();
         $post->name = $request->name;
         $post->gender = $request->gender;
@@ -39,5 +50,36 @@ class PostController extends Controller
 
         return redirect()
             ->route('posts.index');
+    }
+
+    public function edit(Post $post)
+    {
+        return view('posts.edit')
+            ->with(['post' => $post]);
+    }
+
+    public function update(Request $request, Post $post)
+    {
+        $request->validate([
+            'name' => 'required|min:3',
+            'gender' => 'required',
+            'pref' => 'required',
+            'jyob' => 'required',
+            'employmentstatus' => 'required',
+        ], [
+            'name.required' => '氏名は必須です',
+            'name.min' => ':min 文字以上入力してください',
+        ]);
+
+        $post = new Post();
+        $post->name = $request->name;
+        $post->gender = $request->gender;
+        $post->pref = $request->pref;
+        $post->jyob = $request->jyob;
+        $post->employmentstatus = $request->employmentstatus;
+        $post->save();
+
+        return redirect()
+            ->route('posts.show', $post);
     }
 }
