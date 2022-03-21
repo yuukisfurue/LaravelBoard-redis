@@ -13,7 +13,7 @@ class PostRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,19 @@ class PostRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|min:3',
+            'gender' => 'required',
+            'pref' => 'required',
+            'jyob' => 'required',
+            'employmentstatus' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => '氏名は必須です',
+            'name.min' => ':min 文字以上入力してください',
         ];
     }
 }

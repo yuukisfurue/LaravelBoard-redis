@@ -19,28 +19,35 @@
             </label>
         </div>
         <div class="form-group">
-            <label>
-              性別
-                <input type="string" name="gender" value="{{ old('gender') }}">
-            </label>
-         </div>
+        <tr><th>性別</th><td>
+        <select type="text" class="form-control" name="gender">                 
+        @foreach(config('gender') as $key => $score)
+        <option value="{{ $score }}">{{ $score }}</option>
+        @endforeach
+        </select>         </div>
         <div class="form-group">
-            <label>
-              出身地
-               <input type="string" name="pref" value="{{ old('pref') }}">
-            </label>
+         <tr><th>出身地</th><td>
+         <select type="text" class="form-control" name="pref">                          
+        @foreach(config('pref') as $key => $score)
+        <option value="{{ $score }}">{{ $score }}</option>
+        @endforeach
+       </select>
         </div>
         <div class="form-group">
-            <label>
-            職業
-                <input type="string" name="jyob" value="{{ old('jyob') }}">
-            </label>
+         <tr><th>所属</th><td>
+         <select id="select-jyob" class="select-jyob" name="jyob">
+         @foreach (config('consts.jyobs') as $key => $value)
+        <option value="{{ $key }}">{{ $value }}</option>
+        @endforeach
+        </select>
         </div>
         <div class="form-group">
-            <label>
-            雇用形態
-                <input type="string" name="employmentstatus" value="{{ old('employmentstatus') }}">
-            </label>
+        <tr><th>雇用</th><td>
+        <select type="text" class="form-control" name="employmentstatus">                 
+        @foreach(config('employmentstatus') as $key => $score)
+        <option value="{{ $score }}">{{ $score }}</option>
+        @endforeach
+        </select>
             </div>
         <div class="form-button">
             <button>Add</button>

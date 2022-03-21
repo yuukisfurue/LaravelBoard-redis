@@ -1,3 +1,7 @@
+a {
+    text-decoration: none;
+}
+
 .container {
     width: 480px;
     margin: 40px auto;
@@ -55,16 +59,32 @@ button {
     text-align: right;
 }
 
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.btn {
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    font-weight: normal;
+    color: #15c;
+    cursor: pointer;
+    vertical-align: 1px;
+}
+
 table th {/*table内のthに対して*/
-    padding: 10px 35px;
+    padding: 15px 15px;
   }
   
   table td {/*table内のtdに対して*/
-    padding: 20px 20px;
+    padding: 15px 15px;
   }
 
   table tr {/*table内のtdに対して*/
-    padding: 30px 30px;
+    padding: 15px 15px;
   }
 
   .error {

@@ -6,7 +6,7 @@
     <div class="back-link">
         &laquo; <a href="{{ route('posts.index') }}">Back</a>
     </div>
-
+    {{ $posts->links() }}
     <h1>BOARD</h1>
     <p>{{ $post->id }}</p>
     <p>{{ $post->name }}</p>

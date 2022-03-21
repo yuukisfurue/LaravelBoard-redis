@@ -10,26 +10,27 @@
     <h2>
         <span>Laravelmix-Tutorial</span>
     </h2>
-    @forelse ($posts as $post)
-    <table border="3">
+    <table border="1">
     <tr>
-    <th>番号</th>
-    <th>氏名</th>
-    <th>性別</th>
-    <th>出身地</th>
-    <th>職業</th>
-    <th>雇用</th>
+    <td>NO</td>
+    <td>名前</td>
+    <td>性別</td>
+    <td>出身地</td>
+    <td>所属</td>
+    <td>雇用</td>
   </tr>   
-  <tr>
-    <td>{{ $post->id }}</td>
-    <td>{{ $post->name }}</td>
-    <td>{{ $post->gender }}</td>
-    <td>{{ $post->pref }}</td>
-    <td>{{ $post->jyob }}</td>
-    <td>{{ $post->employmentstatus }}</td>
-  </tr>
-  <tr>
+  </table>
 
+  @forelse ($posts as $post)
+  <table border="1">
+  <tr>
+    <th>{{ $post->id }}</th>
+    <th>{{ $post->name }}</th>
+    <th>{{ $post->gender }}</th>
+    <th>{{ $post->pref }}</th>
+    <th>{{ $post->jyob }}</th>
+    <th>{{ $post->employmentstatus }}</th>
+  </tr>
     </table>
         @empty
             <li>No posts</li>
