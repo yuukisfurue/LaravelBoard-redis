@@ -6,15 +6,17 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Http\Requests\PostRequest;
 
-
 class PostController extends Controller
 {
     public function index()
     {
         $posts = Post::latest()->get();
         $jyobs = config('consts.jyobs');
+         $posts = Post::paginate(5);
         return view('index')
             ->with(['posts' => $posts]);
+          {
+        }
     }
 
     // Implicit Binding

@@ -33,6 +33,8 @@
   </tr>
     </table>
         @empty
-            <li>No posts</li>
+            <li>post->links();</li>
         @endforelse
-</x-layout>
+        <p class="mt-5">{{ $posts->links() }}</p>
+
+   </x-layout>

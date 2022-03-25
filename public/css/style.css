@@ -11343,3 +11343,14 @@ table th {/*table内のthに対して*/
     font-size: 14px;
     margin-top: 8px;
 }
+
+/* ページ送りを中央寄せ */
+.pagination {
+  text-align: center;
+}
+
+/* ページ送りを横並びに */
+.pagination li{
+  display: inline-block;
+}
+
