@@ -67,8 +67,8 @@ return [
     |
     */
 
-    'timezone' => 'Asia/Tokyo',
-
+   'timezone' => 'Asia/Tokyo',
+   'locale' => 'ja',
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
