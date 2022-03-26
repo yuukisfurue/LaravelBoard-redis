@@ -13,5 +13,31 @@
     <p>{{ $post->pref }}</p>
     <p>{{ $post->jyob }}</p>
     <p>{{ $post->employmentstatus }}</p>    
+   
+    <h2><a href="{{ route('posts.edit', $post) }}">[編集]</h2></a>
+        <form method="post" action="">
+    <h3><button class="btn">[削除]</button></h3></a>
+
+    <form method="post" action="{{ route('posts.destroy', $post) }}" id="delete_post">
+            @method('DELETE')
+            @csrf
+         <button class="btn">[x]</button>
+     </form>
+     <script>
+        'use strict';
+
+        {
+            document.getElementById('delete_post').addEventListener('submit', e => {
+                e.preventDefault();
+
+                if (!confirm('Sure to delete?')) {
+                    return;
+                }
+
+                e.target.submit();
+            });
+        }
+    </script>
+
 </x-layout>
 

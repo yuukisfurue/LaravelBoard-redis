@@ -19,12 +19,17 @@ class PostController extends Controller
         }
     }
 
+    public function boot()
+    {
+        Paginator::useBootstrap();
+    }
+    
     // Implicit Binding
     public function show(Post $post)
     {
         return view('posts.show')
             ->with(['post' => $post]);
-            
+       
     }
 
     public function create()
@@ -34,6 +39,13 @@ class PostController extends Controller
 
     public function store(PostRequest $request)
     {
+        $request->validate([
+            'name' => 'required|min:4',
+        ], [
+            'name.required' => '名前は必須です',
+            'name.min' => ':min 文字以上入力してください',
+        ]);
+        
         $post = new Post();
         $post->name = $request->name;
         $post->gender = $request->gender;
@@ -51,14 +63,9 @@ class PostController extends Controller
         return view('posts.edit')
             ->with(['post' => $post]);
     }
-    public function boot()
-    {
-        Paginator::useBootstrap();
-    }
-    
+
     public function update(PostRequest $request, Post $post)
     {
-        $post = new Post();
         $post->name = $request->name;
         $post->gender = $request->gender;
         $post->pref = $request->pref;
@@ -68,5 +75,13 @@ class PostController extends Controller
 
         return redirect()
             ->route('posts.show', $post);
+    }
+
+    public function destroy(Post $post)
+    {
+        $post->delete();
+
+        return redirect()
+            ->route('posts.index');
     }
 }

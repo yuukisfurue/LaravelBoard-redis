@@ -11326,31 +11326,45 @@ button {
     vertical-align: 1px;
 }
 
-table th {/*table内のthに対して*/
-    padding: 15px 15px;
-  }
-  
-  table td {/*table内のtdに対して*/
-    padding: 15px 15px;
-  }
+div { border-width : 10px;
+  border-style : solid;
+  padding : 10px;
+}
 
-  table tr {/*table内のtdに対して*/
-    padding: 15px 15px;
-  }
+th { border-width : 20px;
+  padding : 20px;
+}
 
-  .error {
-    color: red;
-    font-size: 14px;
-    margin-top: 8px;
+
+td { border-width : 20px;
+ padding : 20px;
+}
+
+
+tr { border-width : 20px;
+  padding : 20px;
+ }
+ 
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 8px;
 }
 
 /* ページ送りを中央寄せ */
 .pagination {
-  text-align: center;
+text-align: center;
 }
 
 /* ページ送りを横並びに */
 .pagination li{
-  display: inline-block;
+display: inline-block;
 }
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 

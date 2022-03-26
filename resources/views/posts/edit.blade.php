@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot name="title">
-        Edit  Laravelmix-Tutorial
+        Edit Post - My BBS
     </x-slot>
 
     <div class="back-link">
@@ -15,50 +15,43 @@
 
         <div class="form-group">
             <label>
-            氏名
-                <input type="text" name="name" value="{{ old('name', $post->name) }}">
+              氏名
+                <input type="string" name="name" value="{{ old('name') }}">
             </label>
-            @error('name')
-                <div class="error">{{ $message }}</div>
-            @enderror
+    </div>
+        <div class="form-group">
+        <tr><th>性別</th><td>
+        <select type="text" class="form-control" name="gender">                 
+        @foreach(config('gender') as $key => $score)
+        <option value="{{ $score }}">{{ $score }}</option>
+        @endforeach
+        </select>         </div>
+        <div class="form-group">
+         <tr><th>出身地</th><td>
+         <select type="text" class="form-control" name="pref">                          
+        @foreach(config('pref') as $key => $score)
+        <option value="{{ $score }}">{{ $score }}</option>
+        @endforeach
+       </select>
         </div>
         <div class="form-group">
-            <label>
-            性別
-                <textarea name="gender">{{ old('gender', $post->gender) }}</textarea>
-            </label>
-            @error('gender')
-                <div class="error">{{ $message }}</div>
-            @enderror
+         <tr><th>所属</th><td>
+         <select id="select-jyob" class="select-jyob" name="jyob">
+         @foreach (config('consts.jyobs') as $key => $value)
+        <option value="{{ $key }}">{{ $value }}</option>
+        @endforeach
+        </select>
         </div>
         <div class="form-group">
-            <label>
-            出身地
-                <textarea name="pref">{{ old('pref', $post->pref) }}</textarea>
-            </label>
-            @error('pref')
-                <div class="error">{{ $message }}</div>
-            @enderror
-        </div>
-        <div class="form-group">
-            <label>
-            職業
-                <textarea name="jyob">{{ old('jyob', $post->jyob) }}</textarea>
-            </label>
-            @error('jyob')
-                <div class="error">{{ $message }}</div>
-            @enderror
-        </div>
-        <div class="form-group">
-            <label>
-              雇用
-                <textarea name="employmentstatus">{{ old('jyob', $post->employmentstatus) }}</textarea>
-            </label>
-            @error('employmentstatus')
-                <div class="error">{{ $message }}</div>
-            @enderror
-        </div>        <div class="form-button">
-            <button>Update</button>
-        </div>
+        <tr><th>雇用</th><td>
+        <select type="text" class="form-control" name="employmentstatus">                 
+        @foreach(config('employmentstatus') as $key => $score)
+        <option value="{{ $score }}">{{ $score }}</option>
+        @endforeach
+        </select>
+     </div>
+         <div class="form-button">
+                <button>Update</button>
+         </div>
     </form>
 </x-layout>

@@ -6,7 +6,6 @@
     <div class="back-link">
         &laquo; <a href="{{ route('posts.index') }}">Back</a>
     </div>
-    {{ $posts->links() }}
     <h1>BOARD</h1>
     <p>{{ $post->id }}</p>
     <p>{{ $post->name }}</p>
@@ -18,5 +17,7 @@
         <span>{{ $post->id }}</span>
         <a href="{{ route('posts.edit', $post) }}">[Edit]</a>
     </h2>
+
 </x-layout>
+
 
