@@ -14,7 +14,7 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', [PostController::class, 'index'])
+Route::get('/posts', [PostController::class, 'index'])
     ->name('posts.index');
 
 Route::get('/posts/{post}', [PostController::class, 'show'])
@@ -36,3 +36,4 @@ Route::patch('/posts/{post}/update', [PostController::class, 'update'])
 Route::delete('/posts/{post}/destroy', [PostController::class, 'destroy'])
     ->name('posts.destroy')
     ->where('post', '[0-9]+');
+

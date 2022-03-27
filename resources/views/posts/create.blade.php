@@ -1,15 +1,14 @@
 <x-layout>
     <x-slot name="title">
-        Add New BOARD
+    登録フォーム
     </x-slot>
 
     <div class="back-link">
-        &laquo; <a href="{{ route('posts.index') }}">Back</a>
+        &laquo; <a href="{{ route('posts.index') }}">戻る</a>
     </div>
 
-    <h1>Add New Post</h1>
-
-    <form method="post" action="{{ route('posts.store') }}">
+    <h1>登録フォーム</h1>
+     <form method="post" action="{{ route('posts.store') }}">
         @csrf
 
         <div class="form-group">
@@ -18,13 +17,17 @@
                 <input type="string" name="name" value="{{ old('name') }}">
             </label>
         </div>
-        <div class="form-group">
-        <tr><th>性別</th><td>
-        <select type="text" class="form-control" name="gender">                 
-        @foreach(config('gender') as $key => $score)
-        <option value="{{ $score }}">{{ $score }}</option>
-        @endforeach
-        </select>         </div>
+        <div class="form-group row">
+        <label>
+        性別
+         <p class="col-sm-4 col-form-label"></p>
+                <div class="col-sm-8">
+                    <label>{{ Form::radio('gender', "未選択") }}未選択</label>
+                    <label>{{ Form::radio('gender', "男性") }}男性</label>
+                    <label>{{ Form::radio('gender', "女性") }}女性</label>
+                </div>
+            </div>
+        </label>
         <div class="form-group">
          <tr><th>出身地</th><td>
          <select type="text" class="form-control" name="pref">                          
@@ -35,11 +38,11 @@
         </div>
         <div class="form-group">
          <tr><th>所属</th><td>
-         <select id="select-jyob" class="select-jyob" name="jyob">
-         @foreach (config('consts.jyobs') as $key => $value)
-        <option value="{{ $key }}">{{ $value }}</option>
+         <select type="text" class="form-control" name="jyob">                 
+        @foreach(config('jyob') as $key => $score)
+        <option value="{{ $score }}">{{ $score }}</option>
         @endforeach
-        </select>
+         </select>
         </div>
         <div class="form-group">
         <tr><th>雇用</th><td>
@@ -50,7 +53,7 @@
         </select>
             </div>
         <div class="form-button">
-            <button>Add</button>
+            <button>登録</button>
         </div>
     </form>
 </x-layout>

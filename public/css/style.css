@@ -11331,40 +11331,37 @@ div { border-width : 10px;
   padding : 10px;
 }
 
-th { border-width : 20px;
-  padding : 20px;
-}
 
-
-td { border-width : 20px;
- padding : 20px;
-}
-
-
-tr { border-width : 20px;
-  padding : 20px;
- }
- 
-
-.error {
-  color: red;
-  font-size: 14px;
-  margin-top: 8px;
-}
-
-/* ページ送りを中央寄せ */
-.pagination {
-text-align: center;
-}
-
-/* ページ送りを横並びに */
-.pagination li{
-display: inline-block;
+th,td,tr {
+  border: solid 5px;          /* 枠線指定 */
 }
 
 table {
-  margin-left: auto;
-  margin-right: auto;
+  table-layout: fixed;
+  width: 100%;
+}
+
+th {
+  width:  100px;              /* 幅指定 */
+  font-weight:  normal;       /* 文字の太さ指定 */
+}
+
+td {
+  font-weight:  bold;         /* 文字の太さ指定 */
 }
 
 
+/* ページ送りを中央寄せ */
+.pagination {
+ text-align: center;
+  }
+  
+ /* ページ送りを横並びに */
+.pagination li{
+  display: inline-block;
+  }
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 8px;
+  }

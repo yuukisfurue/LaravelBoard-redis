@@ -11,8 +11,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::latest()->get();
-        $jyobs = config('consts.jyobs');
-         $posts = Post::paginate(5);
+        $posts = Post::paginate(5);
         return view('index')
             ->with(['posts' => $posts]);
           {
