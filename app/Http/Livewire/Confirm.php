@@ -12,12 +12,10 @@ class Confirm extends Component
 
     public $posts;
     public $requestList;
-    public $prefectures;
 
     public function mount()
     {
         $this->requestList = config('contact.requests');
-        $this->prefectures = config('contact.prefectures');
         $this->posts = session()->get('posts');
         if(empty($this->posts)){
             return redirect()->route('home');

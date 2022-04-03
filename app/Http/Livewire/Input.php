@@ -8,7 +8,6 @@ class Input extends Component
 {
     public $posts;
     public $requestList;
-    public $prefectures;
     
     protected $rules = [
         'posts.name' => 'required',
@@ -24,7 +23,6 @@ class Input extends Component
     public function mount()
     {
         $this->requestList = config('contact.requests');
-        $this->prefectures = config('contact.prefectures');
         $this->posts = session()->get('posts');
     }
 
