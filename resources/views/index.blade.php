@@ -5,7 +5,7 @@
 
     <h1>
         <span>Laravelmix-Tutorial</span>
-        <a href="{{ route('posts.create') }}">[追加]</a>
+        <a href="{{ route('posts.create') }}">[登録へ]</a>
     </h1>
     <h2>
         <span>Laravelmix-Tutorial</span>

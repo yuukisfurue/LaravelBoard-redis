@@ -35,7 +35,7 @@
         <option value="{{ $score }}">{{ $score }}</option>
         @endforeach
        </select>
-        </div>
+       </div>
         <div class="form-group">
          <tr><th>所属</th><td>
          <select type="text" class="form-control" name="jyob">                 

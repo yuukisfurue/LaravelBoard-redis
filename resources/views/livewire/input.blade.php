@@ -34,7 +34,7 @@
                 @endforeach
             </div>
             @error('posts.request') <span class="text-red-600 err-message">{{ $message }}</span> @enderror
-        </div>   
+       </div>   
         <div class="mt-8">
             <p>上記の中になければ、感想と一緒に下記コメント欄にご記入下さい</p>
             <span class="text-sm font-bold text-gray-600 uppercase">コメント</span>
