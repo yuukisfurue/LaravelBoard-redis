@@ -15,9 +15,9 @@
     <td>NO</td>
     <td>名前</td>
     <td>性別</td>
-    <td>出身地</td>
-    <td>所属</td>
-    <td>雇用</td>
+    <td>都道府県</td>
+    <td>職種</td>
+    <td>役職</td>
   </tr>   
   </table>
 
@@ -27,9 +27,9 @@
     <th>{{ $post->id }}</th>
     <th>{{ $post->name }}</th>
     <th>{{ $post->gender }}</th>
-    <th>{{ $post->pref }}</th>
+    <th>{{ $post->prefecture }}</th>
     <th>{{ $post->jyob }}</th>
-    <th>{{ $post->employmentstatus }}</th>
+    <th>{{ $post->position }}</th>
   </tr>
     </table>
         @empty

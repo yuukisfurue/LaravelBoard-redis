@@ -11259,7 +11259,7 @@ div { border-width : 10px;
 
 th,td,tr {
    /* 枠線指定 */
-  border: solid 5px;         
+  border: solid 2px;         
 }
 
 table {
@@ -11276,7 +11276,7 @@ th {
 
 td {
      /* 文字の太さ指定 */
-  font-weight:  bold;  
+  font-weight:  normal;  
 }
 
 .pagination {
