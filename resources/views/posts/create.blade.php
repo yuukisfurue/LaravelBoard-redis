@@ -53,7 +53,7 @@
         </select>
             </div>
         <div class="form-button">
-            <button>登録</button>
+        <button type="submit" class="btn btn-primary">submit</button>
         </div>
     </form>
 </x-layout>

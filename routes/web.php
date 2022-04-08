@@ -40,8 +40,11 @@ Route::delete('/posts/{post}/destroy', [PostController::class, 'destroy'])
     ->name('posts.destroy')
     ->where('post', '[0-9]+');
 
-Route::get('/', Input::class)->name('home'); //入力画面
-Route::get('/confirm', Confirm::class)->name('confirm'); //確認画面
-Route::get('/complete', Complete::class)->name('complete'); //完了画面
+Route::get('/', Input::class)->name('home'); 
+Route::get('/confirm', Confirm::class)->name('confirm'); 
+Route::get('/complete', Complete::class)->name('complete'); 
+
+
+
 
     

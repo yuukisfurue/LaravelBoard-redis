@@ -27,14 +27,13 @@
     <th>{{ $post->id }}</th>
     <th>{{ $post->name }}</th>
     <th>{{ $post->gender }}</th>
-    <th>{{ $post->prefecture }}</th>
+    <th>{{ $post->pref }}</th>
     <th>{{ $post->jyob }}</th>
-    <th>{{ $post->position }}</th>
+    <th>{{ $post->employmentstatus }}</th>
   </tr>
     </table>
         @empty
             <li>post->links();</li>
         @endforelse
         <p class="mt-5">{{ $posts->links() }}</p>
-
    </x-layout>
