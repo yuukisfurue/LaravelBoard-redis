@@ -43,8 +43,3 @@ Route::delete('/posts/{post}/destroy', [PostController::class, 'destroy'])
 Route::get('/Input', Input::class)->name('home'); 
 Route::get('/confirm', Confirm::class)->name('confirm'); 
 Route::get('/complete', Complete::class)->name('complete'); 
-
-
-
-
-    
