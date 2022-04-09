@@ -13,7 +13,8 @@ class Post extends Model
     protected $fillable = [
         'name',
         'gender',
-        'pref',
+        'prefecture',
+        'company',
         'jyob',
         'employmentstatus',
     ];

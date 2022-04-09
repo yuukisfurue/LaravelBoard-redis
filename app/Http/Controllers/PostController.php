@@ -38,17 +38,12 @@ class PostController extends Controller
 
     public function store(PostRequest $request)
     {
-        $request->validate([
-            'name' => 'required|min:4',
-        ], [
-            'name.required' => '名前は必須です',
-            'name.min' => ':min 文字以上入力してください',
-        ]);
-        
+            
         $post = new Post();
         $post->name = $request->name;
         $post->gender = $request->gender;
-        $post->pref = $request->pref;
+        $post->prefecture = $request->prefecture;
+        $post->company = $request->company;
         $post->jyob = $request->jyob;
         $post->employmentstatus = $request->employmentstatus;
         $post->save();
@@ -67,7 +62,8 @@ class PostController extends Controller
     {
         $post->name = $request->name;
         $post->gender = $request->gender;
-        $post->pref = $request->pref;
+        $post->prefecture = $request->prefecture;
+        $post->company = $request->company;
         $post->jyob = $request->jyob;
         $post->employmentstatus = $request->employmentstatus;
         $post->save();

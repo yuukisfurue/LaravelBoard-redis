@@ -7,12 +7,13 @@
         &laquo; <a href="{{ route('posts.index') }}">Back</a>
     </div>
     <h1>登録名簿</h1>
-    <p>{{ $post->id }}</p>
-    <p>{{ $post->name }}</p>
-    <p>{{ $post->gender }}</p>
-    <p>{{ $post->pref }}</p>
-    <p>{{ $post->jyob }}</p>
-    <p>{{ $post->employmentstatus }}</p>    
+    <th>{{ $post->id }}</th>
+    <th>{{ $post->name }}</th>
+    <th>{{ $post->gender }}</th>
+    <th>{{ $post->prefecture }}</th>
+    <th>{{ $post->company }}</th>
+    <th>{{ $post->jyob }}</th>
+    <th>{{ $post->employmentstatus }}</th>
    
     <h2><a href="{{ route('posts.edit', $post) }}">[編集]</h2></a>
         <form method="post" action="">

@@ -26,7 +26,8 @@ class PostRequest extends FormRequest
         return [
             'name' => 'required|min:3',
             'gender' => 'required',
-            'pref' => 'required',
+            'prefecture' => 'required',
+            'company' => 'required',
             'jyob' => 'required',
             'employmentstatus' => 'required',
         ];

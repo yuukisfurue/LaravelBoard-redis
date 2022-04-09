@@ -1,13 +1,13 @@
 <x-layout>
     <x-slot name="title">
-        Edit Post - My BBS
+    修正フォーム
     </x-slot>
 
     <div class="back-link">
         &laquo; <a href="{{ route('posts.show', $post) }}">Back</a>
     </div>
 
-    <h1>Edit Post</h1>
+    <h1>修正フォーム</h1>
 
     <form method="post" action="{{ route('posts.update', $post) }}">
         @method('PATCH')
@@ -18,7 +18,7 @@
               氏名
                 <input type="string" name="name" value="{{ old('name') }}">
             </label>
-    </div>
+      </div>
         <div class="form-group">
         <tr><th>性別</th><td>
         <select type="text" class="form-control" name="gender">                 
@@ -27,31 +27,38 @@
         @endforeach
         </select>         </div>
         <div class="form-group">
-         <tr><th>出身地</th><td>
-         <select type="text" class="form-control" name="pref">                          
-        @foreach(config('pref') as $key => $score)
+        <tr><th>出身地</th><td>
+        <select type="text" class="form-control" name="prefecture">                 
+        @foreach(config('prefecture') as $key => $score)
         <option value="{{ $score }}">{{ $score }}</option>
         @endforeach
-       </select>
+         </select>
+       </div>
+        <div class="form-group">
+        <tr><th>所属形態</th><td>
+        <select type="text" class="form-control" name="company">                 
+        @foreach(config('company') as $key => $score)
+        <option value="{{ $score }}">{{ $score }}</option>
+        @endforeach
+         </select>
         </div>
         <div class="form-group">
-         <tr><th>所属</th><td>
-         <select id="select-jyob" class="select-jyob" name="jyob">
-         @foreach (config('consts.jyobs') as $key => $value)
-        <option value="{{ $key }}">{{ $value }}</option>
+        <tr><th>所属部署</th><td>
+        <select type="text" class="form-control" name="jyob">                 
+        @foreach(config('jyob') as $key => $score)
+        <option value="{{ $score }}">{{ $score }}</option>
         @endforeach
         </select>
-        </div>
-        <div class="form-group">
-        <tr><th>雇用</th><td>
-        <select type="text" class="form-control" name="employmentstatus">                 
+         </div>
+        <tr><th>役職</th><td>
+        <select type="text" class="form-control" name="employmentstatus">                          
         @foreach(config('employmentstatus') as $key => $score)
         <option value="{{ $score }}">{{ $score }}</option>
         @endforeach
-        </select>
-     </div>
+       </select>
+       </div>
          <div class="form-button">
-                <button>Update</button>
+        <button type="Update" class="btn btn-primary">update</button>
          </div>
     </form>
 </x-layout>

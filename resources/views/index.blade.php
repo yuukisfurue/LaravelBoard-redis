@@ -13,10 +13,11 @@
     <table border="1">
     <tr>
     <td>NO</td>
-    <td>名前</td>
+    <td>氏名</td>
     <td>性別</td>
     <td>都道府県</td>
-    <td>職種</td>
+    <td>所属形態</td>
+    <td>所属部署</td>
     <td>役職</td>
   </tr>   
   </table>
@@ -27,7 +28,8 @@
     <th>{{ $post->id }}</th>
     <th>{{ $post->name }}</th>
     <th>{{ $post->gender }}</th>
-    <th>{{ $post->pref }}</th>
+    <th>{{ $post->prefecture }}</th>
+    <th>{{ $post->company }}</th>
     <th>{{ $post->jyob }}</th>
     <th>{{ $post->employmentstatus }}</th>
   </tr>

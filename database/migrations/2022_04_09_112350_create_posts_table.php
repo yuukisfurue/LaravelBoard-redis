@@ -17,13 +17,14 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('gender');
-            $table->string('pref');
+            $table->string('prefecture');
+            $table->string('company');
             $table->string('jyob');
             $table->string('employmentstatus');
             $table->timestamps(); // created_at, updated_at
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *
