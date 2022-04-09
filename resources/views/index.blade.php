@@ -1,15 +1,12 @@
 <x-layout>
     <x-slot name="title">
-    Laravelmix-Tutorial
     </x-slot>
 
     <h1>
-        <span>Laravelmix-Tutorial</span>
+    <p> <span>LaravelBoard-Tutorial</span></p>
         <a href="{{ route('posts.create') }}">[登録へ]</a>
     </h1>
-    <h2>
-        <span>Laravelmix-Tutorial</span>
-    </h2>
+
     <table border="1">
     <tr>
     <td>NO</td>
@@ -38,4 +35,5 @@
             <li>post->links();</li>
         @endforelse
         <p class="mt-5">{{ $posts->links() }}</p>
+        <a href="{{ route('home') }}">[感想を一言お願いします！]</a>
    </x-layout>
