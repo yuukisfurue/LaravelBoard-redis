@@ -2,9 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
-use App\Http\Livewire\Input;
-use App\Http\Livewire\Confirm;
-use App\Http\Livewire\Complete;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +38,13 @@ Route::delete('/posts/{post}/destroy', [PostController::class, 'destroy'])
     ->name('posts.destroy')
     ->where('post', '[0-9]+');
 
-Route::get('/Input', Input::class)->name('home'); 
-Route::get('/confirm', Confirm::class)->name('confirm'); 
-Route::get('/complete', Complete::class)->name('complete'); 
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

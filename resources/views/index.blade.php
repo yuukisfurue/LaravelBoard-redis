@@ -35,5 +35,4 @@
             <li>post->links();</li>
         @endforelse
         <p class="mt-5">{{ $posts->links() }}</p>
-        <a href="{{ route('home') }}">[感想を一言お願いします！]</a>
    </x-layout>
