@@ -36,8 +36,4 @@
         @endforelse
         <p class="mt-5">{{ $posts->links() }}</p>
         <a href="{{ route('home') }}">[感想を一言お願いします！]</a>
-<<<<<<< HEAD
    </x-layout>
-=======
-   </x-layout>
->>>>>>> 305ec2934ccf0530c9d90db8ea99cb6aee5a423e
