@@ -20,9 +20,6 @@
                 {{ $slot }}
             </main>
         </div>
-
-        <ul class="list-group">
-        </ul>
         @stack('modals')
         @livewireScripts
     </body>

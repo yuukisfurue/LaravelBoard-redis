@@ -8,14 +8,69 @@ use App\Http\Requests\PostRequest;
 
 class PostController extends Controller
 {
-    public function index()
-    {
-        $posts = Post::latest()->get();
-        $posts = Post::paginate(10);
-        return view('index')
-            ->with(['posts' => $posts]);
-          {
-        }
+    public function index(Request $request) {
+        $posts = Post::search()->paginate(10);
+        $search_params = $request->only([
+            'name',
+            'gender',
+            'prefecture',
+            'company',
+            'jyob',
+            'employmentstatus'
+        ]);
+
+        return view('index', [
+            'posts' => $posts,
+            'search_params' => $search_params
+        ]);
+    }
+
+    public function csvDownload() {
+        $posts = Post::search()->get();
+
+        $headers = [
+            "Content-type" => "text/csv",
+            "Content-Disposition" => "attachment; filename=file.csv"
+        ];
+
+        $callback = function() use($posts) {
+            $handle = fopen('php://output', 'w');
+
+          $columns = [
+            'id',
+            'name',
+            'gender',
+            'prefecture',
+            'company',
+            'jyob',
+            'employmentstatus'
+            ];
+
+            mb_convert_variables('SJIS-win', 'UTF-8', $columns);
+
+            fputcsv($handle, $columns);
+
+            foreach($posts as $post) {
+                $csv = [
+                    $post->id,
+                    $post->name,
+                    $post->gender,
+                    $post->prefecture,
+                    $post->company,
+                    $post->jyob,
+                    $post->employmentstatus
+                ];
+
+                mb_convert_variables('SJIS-win', 'UTF-8', $csv);
+
+                fputcsv($handle, $csv);
+            }
+
+            fclose($handle);
+        };
+
+        return response()->stream($callback, 200, $headers);
+
     }
 
     public function boot()

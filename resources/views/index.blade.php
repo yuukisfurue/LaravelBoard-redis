@@ -35,4 +35,5 @@
             <li>post->links();</li>
         @endforelse
         <p class="mt-5">{{ $posts->links() }}</p>
+        <a href="{{ route('export') }}">[CSV]</a>
    </x-layout>

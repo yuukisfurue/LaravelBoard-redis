@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +13,17 @@ use App\Http\Controllers\PostController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
+
 
 Route::get('/', [PostController::class, 'index'])
     ->name('posts.index');
@@ -38,13 +48,6 @@ Route::delete('/posts/{post}/destroy', [PostController::class, 'destroy'])
     ->name('posts.destroy')
     ->where('post', '[0-9]+');
 
+Route::get('/export', 'App\Http\Controllers\PostController@csvDownload')->name('export');
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+

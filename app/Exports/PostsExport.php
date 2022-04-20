@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Exports;
-use App\Models\Post; //Laravel8の場合
+use App\Models\Post; 
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Facades\Excel; 
 
