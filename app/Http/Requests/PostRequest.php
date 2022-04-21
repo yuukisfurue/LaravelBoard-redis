@@ -25,11 +25,11 @@ class PostRequest extends FormRequest
     {
         return [
             'name' => 'required|min:3',
-            'gender' => 'required',
-            'prefecture' => 'required',
-            'company' => 'required',
-            'jyob' => 'required',
-            'employmentstatus' => 'required',
+            'gender' => 'required|min:1',
+            'prefecture' => 'required|min:1',
+            'company' => 'required|min:1',
+            'jyob' => 'required|min:1',
+            'employmentstatus' => 'required|min:1',
         ];
     }
 
@@ -38,6 +38,10 @@ class PostRequest extends FormRequest
         return [
             'name.required' => '氏名は必須です',
             'name.min' => ':min 文字以上入力してください',
+            'gender.required' => '性別は必須です',
+            'prefecture.required' => '都道府県は必須です',
+            'jyob.required' => '所属形態は必須です',
+            'employmentstatus.required' => '役職は必須です',
         ];
     }
 }

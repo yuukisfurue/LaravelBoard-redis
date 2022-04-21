@@ -13,8 +13,8 @@
     <td>氏名</td>
     <td>性別</td>
     <td>都道府県</td>
-    <td>所属形態</td>
-    <td>所属部署</td>
+    <td>職種</td>
+    <td>部署</td>
     <td>役職</td>
   </tr>   
   </table>

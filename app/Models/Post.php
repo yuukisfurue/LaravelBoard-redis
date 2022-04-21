@@ -18,6 +18,7 @@ class Post extends Model
         'jyob',
         'employmentstatus',
     ];
+    
     public function scopeSearch($query) {
     $request = request();
     
