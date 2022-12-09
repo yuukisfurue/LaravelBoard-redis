@@ -3,7 +3,7 @@
     </x-slot>
 
     <h1>
-    <p> <span>LaravelBoard-Tutorial</span></p>
+    <p> <span>社員登録簿</span></p>
         <a href="{{ route('posts.create') }}">[登録へ]</a>
     </h1>
 
