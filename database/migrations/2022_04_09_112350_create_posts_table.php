@@ -18,8 +18,13 @@ class CreatePostsTable extends Migration
             $table->string('name');
             $table->string('gender');
             $table->string('prefecture');
+            $table->string('stay');
             $table->string('company');
             $table->string('jyob');
+            $table->string('affiliation');
+            $table->string('pojishon');
+            $table->string('annual');
+            $table->string('lastyear');
             $table->string('employmentstatus');
             $table->timestamps(); // created_at, updated_at
         });
