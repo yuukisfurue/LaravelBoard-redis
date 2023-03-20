@@ -11,3 +11,6 @@ $search_params = $request->only([
 Post.phpの22行目から
 public function scopeSearch($query) 
 で実装しております。
+
+またこちらはredisを組み込んでいるLaravelプロジェクトとなります。
+その設定は後日記載致します。
