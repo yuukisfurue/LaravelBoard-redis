@@ -13,6 +13,7 @@ public function scopeSearch($query)
 で実装しております。
 
 またこちらはredisを組み込んでいるLaravelプロジェクトとなります。
+現在vpsでnginx運用中です
 その設定は後日記載致します。
 
 どういった機能なのかは以下のリンクよりご確認お願い致します。
