@@ -9,8 +9,8 @@
     <h1>登録名簿</h1>
     <th>{{ $post->id }}</th>
     <th>{{ $post->name }}</th>
-    <th>{{ $post->gender }}</th>
     <th>{{ $post->prefecture }}</th>
+    <th>{{ $post->gender }}</th>
     <th>{{ $post->employmentstatus }}</th>
     <th>{{ $post->company }}</th>
     <th>{{ $post->jyob }}</th>

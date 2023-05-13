@@ -11,8 +11,8 @@
     <tr>
     <td>NO</td>
     <td>氏名</td>
-    <td>性別</td>
     <td>出身地</td>
+    <td>性別</td>
     <td>雇用形態</td>
     <td>職種</td>
     <td>部署</td>
@@ -29,8 +29,8 @@
   <tr>
     <th>{{ $post->id }}</th>
     <th>{{ $post->name }}</th>
-    <th>{{ $post->gender }}</th>
     <th>{{ $post->prefecture }}</th>
+    <th>{{ $post->gender }}</th>
     <th>{{ $post->employmentstatus }}</th>
     <th>{{ $post->company }}</th>
     <th>{{ $post->jyob }}</th>

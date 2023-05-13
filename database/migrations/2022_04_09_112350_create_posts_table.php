@@ -26,6 +26,7 @@ class CreatePostsTable extends Migration
             $table->string('postion');
             $table->string('annual');
             $table->string('lastyear');
+            $table->timestamps(); // created_at, updated_at
         });
     }
     

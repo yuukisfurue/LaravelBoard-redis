@@ -12,16 +12,16 @@ class PostController extends Controller
         $posts = Post::search()->paginate(10);
         $search_params = $request->only([
             'name',
-            'gender',
             'prefecture',
-            'stay',
+            'gender',
+            'employmentstatus',
             'company',
             'jyob',
+            'stay',
             'affiliation',
             'postion',
             'annual',
-            'lastyear',
-            'employmentstatus'
+            'lastyear'
         ]);
 
         return view('index', [
@@ -42,18 +42,17 @@ class PostController extends Controller
             $handle = fopen('php://output', 'w');
 
           $columns = [
-            'id',
             'name',
-            'gender',
             'prefecture',
-            'stay',
+            'gender',
+            'employmentstatus',
             'company',
             'jyob',
+            'stay',
             'affiliation',
             'postion',
             'annual',
-            'lastyear',
-            'employmentstatus'
+            'lastyear'
             ];
 
             mb_convert_variables('SJIS-win', 'UTF-8', $columns);
@@ -64,8 +63,8 @@ class PostController extends Controller
                 $csv = [
                     $post->id,
                     $post->name,
-                    $post->gender,
                     $post->prefecture,
+                    $post->gender,
                     $post->employmentstatus,
                     $post->company,
                     $post->jyob,
@@ -140,10 +139,10 @@ class PostController extends Controller
         $post->name = $request->name;
         $post->prefecture = $request->prefecture;
         $post->gender = $request->gender;
-        $post->stay = $request->stay;
         $post->employmentstatus = $request->employmentstatus;
         $post->company = $request->company;
         $post->jyob = $request->jyob;
+        $post->stay = $request->stay;
         $post->affiliation = $request->affiliation;
         $post->postion = $request->postion;
         $post->annual = $request->annual;
