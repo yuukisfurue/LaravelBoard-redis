@@ -18,7 +18,7 @@ class PostController extends Controller
             'company',
             'jyob',
             'affiliation',
-            'pojishon',
+            'postion',
             'annual',
             'lastyear',
             'employmentstatus'
@@ -50,7 +50,7 @@ class PostController extends Controller
             'company',
             'jyob',
             'affiliation',
-            'pojishon',
+            'postion',
             'annual',
             'lastyear',
             'employmentstatus'
@@ -66,14 +66,14 @@ class PostController extends Controller
                     $post->name,
                     $post->gender,
                     $post->prefecture,
-                    $post->stay,
+                    $post->employmentstatus,
                     $post->company,
                     $post->jyob,
+                    $post->stay,
                     $post->affiliation,
-                    $post->pojishon,
+                    $post->postion,
                     $post->annual,
-                    $post->lastyear,
-                    $post->employmentstatus
+                    $post->lastyear
                 ];
 
                 mb_convert_variables('SJIS-win', 'UTF-8', $csv);
@@ -112,42 +112,42 @@ class PostController extends Controller
             'name' => 'required|min:3',
             'gender' => 'required|min:1',
             'prefecture' => 'required|min:1',
-            'stay' => 'required|min:1',
+            'employmentstatus' => 'required|min:1',            
             'company' => 'required|min:1',
             'jyob' => 'required|min:1',
+            'stay' => 'required|min:1',
             'affiliation' => 'required|min:1',
-            'pojishon' => 'required|min:1',
+            'postion' => 'required|min:1',
             'annual' => 'required|min:1',
             'lastyear' => 'required|min:1',
-            'employmentstatus' => 'required|min:1',            
         ], 
         [
             'name.required' => '氏名は必須です',
             'name.min' => ':min 文字以上入力してください',
             'gender.required' => '性別は必須です',
             'prefecture.required' => '出身地は必須です',
-            'stay.required' => '現住所は必須です',
+            'employmentstatus.required' => '役職は必須です',
             'company.required' => '職種は必須です',
             'jyob.required' => '部署は必須です',
+            'stay.required' => '現住所は必須です',
             'affiliation.required' => 'チーム名は必須です',
-            'pojishon.required' => 'ポジションは必須です',
+            'postion.required' => 'ポジションは必須です',
             'annual' => '現年収は必須です',
             'lastyear' => '前年収は必須です',
-            'employmentstatus.required' => '役職は必須です',
         ]);
 
         $post = new Post();
         $post->name = $request->name;
-        $post->gender = $request->gender;
         $post->prefecture = $request->prefecture;
+        $post->gender = $request->gender;
         $post->stay = $request->stay;
+        $post->employmentstatus = $request->employmentstatus;
         $post->company = $request->company;
         $post->jyob = $request->jyob;
         $post->affiliation = $request->affiliation;
-        $post->pojishon = $request->pojishon;
+        $post->postion = $request->postion;
         $post->annual = $request->annual;
         $post->lastyear = $request->lastyear;
-        $post->employmentstatus = $request->employmentstatus;
         $post->save();
         
         return redirect()
@@ -163,16 +163,16 @@ class PostController extends Controller
     public function update(PostRequest $request, Post $post)
     {
         $post->name = $request->name;
-        $post->gender = $request->gender;
         $post->prefecture = $request->prefecture;
-        $post->stay = $request->stay;
+        $post->gender = $request->gender;
+        $post->employmentstatus = $request->employmentstatus;
         $post->company = $request->company;
         $post->jyob = $request->jyob;
+        $post->stay = $request->stay;
         $post->affiliation = $request->affiliation;
-        $post->pojishon = $request->pojishon;
+        $post->postion = $request->postion;
         $post->annual = $request->annual;
         $post->lastyear = $request->lastyear;
-        $post->employmentstatus = $request->employmentstatus;
         $post->save();
 
         return redirect()

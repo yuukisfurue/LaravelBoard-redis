@@ -20,6 +20,17 @@
                 <div class="error">{{ $message }}</div>
             @enderror
         </div>
+        <div class="form-group">
+        <tr><th>出身地</th><td>
+        <select type="text" class="form-control" name="prefecture">                 
+        @foreach(config('prefecture') as $key => $score)
+        <option value="{{ $score }}">{{ $score }}</option>
+        @endforeach
+         </select>
+           @error('prefecture')
+           <div class="error">{{ $message }}</div>
+           @enderror     
+       </div>
         <div class="form-group row">
         <label>
         性別
@@ -32,27 +43,16 @@
             @enderror       
                 </div>
         </label>
-        <div class="form-group">
-        <tr><th>出身地</th><td>
-        <select type="text" class="form-control" name="prefecture">                 
-        @foreach(config('prefecture') as $key => $score)
-        <option value="{{ $score }}">{{ $score }}</option>
-        @endforeach
-         </select>
-           @error('prefecture')
-           <div class="error">{{ $message }}</div>
-           @enderror     
-       </div>
        <div class="form-group">
-        <tr><th>現住所</th><td>
-        <select type="text" class="form-control" name="stay">                 
-        @foreach(config('stay') as $key => $score)
+        <tr><th>雇用形態</th><td>
+        <select type="text" class="form-control" name="employmentstatus">                          
+        @foreach(config('employmentstatus') as $key => $score)
         <option value="{{ $score }}">{{ $score }}</option>
         @endforeach
-         </select>
-           @error('stay')
+       </select>
+           @error('employmentstatus')
            <div class="error">{{ $message }}</div>
-           @enderror     
+           @enderror 
        </div>
         <div class="form-group">
         <tr><th>職種</th><td>
@@ -77,6 +77,17 @@
            @enderror 
          </div>
          <div class="form-group">
+        <tr><th>現住所</th><td>
+        <select type="text" class="form-control" name="stay">                 
+        @foreach(config('stay') as $key => $score)
+        <option value="{{ $score }}">{{ $score }}</option>
+        @endforeach
+         </select>
+           @error('stay')
+           <div class="error">{{ $message }}</div>
+           @enderror     
+       </div>
+         <div class="form-group">
         <tr><th>チーム名</th><td>
         <select type="text" class="form-control" name="affiliation">                 
         @foreach(config('affiliation') as $key => $score)
@@ -89,8 +100,8 @@
          </div>
          <div class="form-group">
          <tr><th>ポジション</th><td>
-        <select type="text" class="form-control" name="pojishon">                 
-        @foreach(config('pojishon') as $key => $score)
+        <select type="text" class="form-control" name="postion">                 
+        @foreach(config('postion') as $key => $score)
         <option value="{{ $score }}">{{ $score }}</option>
         @endforeach
         </select>
@@ -120,17 +131,6 @@
            <div class="error">{{ $message }}</div>
            @enderror 
          </div>
-        <div class="form-group">
-        <tr><th>雇用形態</th><td>
-        <select type="text" class="form-control" name="employmentstatus">                          
-        @foreach(config('employmentstatus') as $key => $score)
-        <option value="{{ $score }}">{{ $score }}</option>
-        @endforeach
-       </select>
-           @error('employmentstatus')
-           <div class="error">{{ $message }}</div>
-           @enderror 
-       </div>
         <div class="form-button">
         <button type="submit" class="btn btn-primary">submit</button>
         </div>
