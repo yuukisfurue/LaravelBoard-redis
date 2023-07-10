@@ -42,6 +42,7 @@ class PostController extends Controller
             $handle = fopen('php://output', 'w');
 
           $columns = [
+            'id',
             'name',
             'prefecture',
             'gender',
@@ -109,8 +110,8 @@ class PostController extends Controller
     {
         $request->validate([
             'name' => 'required|min:3',
-            'gender' => 'required|min:1',
             'prefecture' => 'required|min:1',
+            'gender' => 'required|min:1',
             'employmentstatus' => 'required|min:1',            
             'company' => 'required|min:1',
             'jyob' => 'required|min:1',
@@ -123,8 +124,8 @@ class PostController extends Controller
         [
             'name.required' => '氏名は必須です',
             'name.min' => ':min 文字以上入力してください',
-            'gender.required' => '性別は必須です',
             'prefecture.required' => '出身地は必須です',
+            'gender.required' => '性別は必須です',
             'employmentstatus.required' => '役職は必須です',
             'company.required' => '職種は必須です',
             'jyob.required' => '部署は必須です',

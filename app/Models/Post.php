@@ -11,6 +11,7 @@ class Post extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'name',
         'prefecture',
         'gender',
@@ -26,8 +27,12 @@ class Post extends Model
     
     public function scopeSearch($query) {
     $request = request();
-    
-    $query->when($request->name, function($q, $name) {
+
+    $query->when($request->id, function($q, $id) {
+        $q->where('id', 'LIKE', '%' . $id . '%');
+    })
+
+    ->when($request->name, function($q, $name) {
         $q->where('name', 'LIKE', '%' . $name . '%');
     })
     ->when($request->prefecture, function($q, $prefecture) {
